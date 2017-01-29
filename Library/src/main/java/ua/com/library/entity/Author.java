@@ -2,7 +2,9 @@ package ua.com.library.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -27,7 +29,7 @@ public class Author {
 	private String surname;
 	private int age;
 	
-	@OneToMany(mappedBy="author")
+	@OneToMany(mappedBy="author",fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
 	private List<Book> books;
 	
 
@@ -86,7 +88,5 @@ public class Author {
 	public String toString() {
 		return "Author [id=" + id + ", name=" + name + ", surname=" + surname + ", age=" + age + "]";
 	}
-	
-	
 
 }

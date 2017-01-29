@@ -1,4 +1,4 @@
-package ua.com.library.entity;
+package ua.com.library.controller;
 
 import java.util.List;
 

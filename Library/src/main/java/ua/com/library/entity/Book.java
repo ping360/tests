@@ -12,6 +12,16 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
+import javax.persistence.*;
+
+
+@NamedQueries({
+		@NamedQuery(name = "findBookByTitle",
+				query = "select b from Book b where b.title =:param"),
+		@NamedQuery(name = "findAllBook", query = "select b from Book b")
+
+})
+
 @Entity
 public class Book {
 
@@ -84,10 +94,5 @@ public class Book {
 		return "Book [id=" + id + ", title=" + title + ", pages=" + pages + "]";
 	}
 
-	
-	
-	
-
-	
 
 }
