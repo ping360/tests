@@ -12,6 +12,8 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 import ua.com.library.dao.BookDao;
+import ua.com.library.entity.Author;
+import ua.com.library.entity.Book;
 
 public class Main {
 
@@ -24,7 +26,7 @@ public class Main {
 
 		//
 
-		BookDao bookDao = new BookDao(manager);
+	//	BookDao bookDao = new BookDao(manager);
 
 		// bookDao.save(new Book("Pillars of Earth", 619));
 
@@ -46,7 +48,7 @@ public class Main {
 				"select a from Author a join a.books b where b.title = 'some'")
 				.getSingleResult();
 
-		bookDao.finOne("some");
+	//	bookDao.finOne("some");
 
 		manager.close();
 
