@@ -25,7 +25,7 @@ public class BookServiceImpl implements BookService {
 		return bookDao.findAll();
 	}
 
-	public Book findOne(int id) {
+	public Book findOne(int id) { 
 		return bookDao.findOne(id);
 	}
 
