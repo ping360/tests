@@ -1,4 +1,4 @@
-package ua.com.forckshop.entity;
+package ua.com.forkShop.entity;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -30,9 +30,9 @@ public class Model {
 	@JoinColumn(name = "id_category")
 	private Category category;
 	@OneToMany(mappedBy = "model")
-	private List<小haracteristics> characteristics = new ArrayList<>();
+	private List<裩aracteristics> characteristics = new ArrayList<>();
 	public Model(int id, String name, BigDecimal price, Vendor vendor,
-			Category category, List<小haracteristics> characteristics) {
+			Category category, List<裩aracteristics> characteristics) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -42,7 +42,7 @@ public class Model {
 		this.characteristics = characteristics;
 	}
 	public Model(String name, BigDecimal price, Vendor vendor,
-			Category category, List<小haracteristics> characteristics) {
+			Category category, List<裩aracteristics> characteristics) {
 		super();
 		this.name = name;
 		this.price = price;
@@ -87,10 +87,10 @@ public class Model {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
-	public List<小haracteristics> getCharacteristics() {
+	public List<裩aracteristics> getCharacteristics() {
 		return characteristics;
 	}
-	public void setCharacteristics(List<小haracteristics> characteristics) {
+	public void setCharacteristics(List<裩aracteristics> characteristics) {
 		this.characteristics = characteristics;
 	}
 	

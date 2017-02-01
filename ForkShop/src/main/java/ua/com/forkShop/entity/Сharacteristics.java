@@ -1,4 +1,4 @@
-package ua.com.forckshop.entity;
+package ua.com.forkShop.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,9 +9,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import ua.com.forkShop.entity.Model;
+
 @Entity
 @Table(name = "characteristics")
-public class 小haracteristics {
+public class 裩aracteristics {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
@@ -21,23 +23,23 @@ public class 小haracteristics {
 	@ManyToOne
 	@JoinColumn(name = "id_category")
 	private Model model;
-	public 小haracteristics(int id, String itemch, Model model) {
+	public 裩aracteristics(int id, String itemch, Model model) {
 		super();
 		this.id = id;
 		this.itemch = itemch;
 		this.model = model;
 		
 	}
-	public 小haracteristics(String itemch, Model model) {
+	public 裩aracteristics(String itemch, Model model) {
 		super();
 		this.itemch = itemch;
 		this.model = model;
 	}
-	public 小haracteristics(String itemch) {
+	public 裩aracteristics(String itemch) {
 		super();
 		this.itemch = itemch;
 	}
-	public 小haracteristics() {
+	public 裩aracteristics() {
 		super();
 	}
 	public int getId() {

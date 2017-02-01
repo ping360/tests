@@ -1,27 +1,27 @@
-package ua.com.forckshop.serviceImp;
+package ua.com.forkShop.serviceImp;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ua.com.forckshop.dao.CharacteristicsDao;
-import ua.com.forckshop.entity.小haracteristics;
+import ua.com.forkShop.dao.CharacteristicsDao;
+import ua.com.forkShop.entity.裩aracteristics;
 @Service
 public class CharacteristicsServiceImp implements CharacteristicsDao{
 	@Autowired
 	private CharacteristicsDao characteristicsDao;
 
-	public void save(小haracteristics characteristics) {
+	public void save(裩aracteristics characteristics) {
 		characteristicsDao.save(characteristics);
 		
 	}
 
-	public List<小haracteristics> findAll() {
+	public List<裩aracteristics> findAll() {
 		return characteristicsDao.findAll();
 	}
 
-	public 小haracteristics findOne(int id) {
+	public 裩aracteristics findOne(int id) {
 		return characteristicsDao.findOne(id);
 	}
 

@@ -1,8 +1,8 @@
-package ua.com.forckshop.dao;
+package ua.com.forkShop.dao;
 
 import java.util.List;
 
-import ua.com.forckshop.entity.Category;
+import ua.com.forkShop.entity.Category;
 
 public interface CategoryDao {
 	void save (Category category);

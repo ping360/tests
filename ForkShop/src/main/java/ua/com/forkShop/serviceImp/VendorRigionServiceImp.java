@@ -1,13 +1,13 @@
-package ua.com.forckshop.serviceImp;
+package ua.com.forkShop.serviceImp;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ua.com.forckshop.dao.VendorRigionDao;
-import ua.com.forckshop.entity.VendorRigion;
-import ua.com.forckshop.service.VendorRigionService;
+import ua.com.forkShop.dao.VendorRigionDao;
+import ua.com.forkShop.entity.VendorRigion;
+import ua.com.forkShop.service.VendorRigionService;
 @Service
 public class VendorRigionServiceImp implements VendorRigionService{
 	@Autowired

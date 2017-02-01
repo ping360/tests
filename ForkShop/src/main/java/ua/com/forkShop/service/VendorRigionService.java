@@ -1,8 +1,8 @@
-package ua.com.forckshop.service;
+package ua.com.forkShop.service;
 
 import java.util.List;
 
-import ua.com.forckshop.entity.VendorRigion;
+import ua.com.forkShop.entity.VendorRigion;
 
 public interface VendorRigionService {
 	void save (VendorRigion vendorRigion);

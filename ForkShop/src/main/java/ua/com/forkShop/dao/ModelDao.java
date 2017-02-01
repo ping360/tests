@@ -1,7 +1,7 @@
-package ua.com.forckshop.dao;
+package ua.com.forkShop.dao;
 
 import java.util.List;
-import ua.com.forckshop.entity.Model;
+import ua.com.forkShop.entity.Model;
 
 public interface ModelDao {
 	void save (Model model);

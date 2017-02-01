@@ -1,8 +1,8 @@
-package ua.com.forckshop.dao;
+package ua.com.forkShop.dao;
 
 import java.util.List;
 
-import ua.com.forckshop.entity.Vendor;
+import ua.com.forkShop.entity.Vendor;
 
 public interface VendorDao {
 	void save (Vendor vendor);

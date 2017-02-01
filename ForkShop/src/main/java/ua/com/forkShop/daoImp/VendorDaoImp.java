@@ -1,4 +1,4 @@
-package ua.com.forckshop.daoImp;
+package ua.com.forkShop.daoImp;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import ua.com.forckshop.dao.VendorDao;
-import ua.com.forckshop.entity.Vendor;
+import ua.com.forkShop.dao.VendorDao;
+import ua.com.forkShop.entity.Vendor;
 @Repository
 public class VendorDaoImp implements VendorDao{
 	@PersistenceContext(unitName="primary")

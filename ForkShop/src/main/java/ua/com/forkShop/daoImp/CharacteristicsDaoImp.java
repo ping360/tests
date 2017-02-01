@@ -1,4 +1,4 @@
-package ua.com.forckshop.daoImp;
+package ua.com.forkShop.daoImp;
 
 import java.util.List;
 
@@ -8,27 +8,27 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import ua.com.forckshop.dao.CharacteristicsDao;
-import ua.com.forckshop.entity.小haracteristics;
+import ua.com.forkShop.dao.CharacteristicsDao;
+import ua.com.forkShop.entity.裩aracteristics;
 @Repository
 public class CharacteristicsDaoImp implements CharacteristicsDao{
 	@PersistenceContext(unitName="primary")
 	private EntityManager manager;
 	
 	@Transactional
-	public void save(小haracteristics characteristics) {
+	public void save(裩aracteristics characteristics) {
 		manager.persist(characteristics);
 		
 	}
 
 	@Transactional
-	public List<小haracteristics> findAll() {
+	public List<裩aracteristics> findAll() {
 		return manager.createQuery("FROM Characteristics").getResultList();
 	}
 
 	@Transactional
-	public 小haracteristics findOne(int id) {
-		return manager.find(小haracteristics.class, id);
+	public 裩aracteristics findOne(int id) {
+		return manager.find(裩aracteristics.class, id);
 	}
 
 	@Transactional

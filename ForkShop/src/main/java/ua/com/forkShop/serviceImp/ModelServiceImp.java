@@ -1,13 +1,13 @@
-package ua.com.forckshop.serviceImp;
+package ua.com.forkShop.serviceImp;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ua.com.forckshop.dao.ModelDao;
-import ua.com.forckshop.entity.Model;
-import ua.com.forckshop.service.ModelService;
+import ua.com.forkShop.dao.ModelDao;
+import ua.com.forkShop.entity.Model;
+import ua.com.forkShop.service.ModelService;
 @Service
 public class ModelServiceImp implements ModelService{
 	@Autowired

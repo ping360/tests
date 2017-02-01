@@ -1,8 +1,8 @@
-package ua.com.forckshop.service;
+package ua.com.forkShop.service;
 
 import java.util.List;
 
-import ua.com.forckshop.entity.Vendor;
+import ua.com.forkShop.entity.Vendor;
 
 public interface VendorService {
 	void save (Vendor vendor);

@@ -1,4 +1,4 @@
-package ua.com.forckshop.entity;
+package ua.com.forkShop.entity;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,8 +1,8 @@
-package ua.com.forckshop.service;
+package ua.com.forkShop.service;
 
 import java.util.List;
 
-import ua.com.forckshop.entity.Category;
+import ua.com.forkShop.entity.Category;
 
 public interface CategoryService {
 	void save (Category category);

@@ -1,13 +1,15 @@
-package ua.com.forckshop.serviceImp;
+package ua.com.forkShop.serviceImp;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ua.com.forckshop.dao.CategoryDao;
-import ua.com.forckshop.entity.Category;
-import ua.com.forckshop.service.CategoryService;
+import ua.com.forkShop.dao.CategoryDao;
+import ua.com.forkShop.entity.Category;
+import ua.com.forkShop.service.CategoryService;
+
+
 @Service
 public class CategoryServiceImp implements CategoryService{
 	@Autowired

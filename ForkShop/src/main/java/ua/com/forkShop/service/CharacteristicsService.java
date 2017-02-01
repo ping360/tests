@@ -1,13 +1,13 @@
-package ua.com.forckshop.service;
+package ua.com.forkShop.service;
 
 import java.util.List;
 
-import ua.com.forckshop.entity.小haracteristics;
+import ua.com.forkShop.entity.裩aracteristics;
 
 public interface CharacteristicsService {
-	void save (小haracteristics characteristics);
-	List<小haracteristics> findAll();
-	小haracteristics findOne(int id);
+	void save (裩aracteristics characteristics);
+	List<裩aracteristics> findAll();
+	裩aracteristics findOne(int id);
 	void delete(int id);
 
 }
