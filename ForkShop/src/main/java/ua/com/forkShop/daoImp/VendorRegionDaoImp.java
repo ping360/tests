@@ -8,29 +8,29 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import ua.com.forkShop.dao.VendorRigionDao;
-import ua.com.forkShop.entity.VendorRigion;
+import ua.com.forkShop.dao.VendorRegionDao;
+import ua.com.forkShop.entity.VendorRegion;
 
 @Repository
-public class VendorRigionDaoImp implements VendorRigionDao{
+public class VendorRegionDaoImp implements VendorRegionDao{
 
 	@PersistenceContext(unitName = "primary")
 	private EntityManager manager;
 
 	@Transactional
-	public void save(VendorRigion vendorRigion) {
-		manager.persist(vendorRigion);
+	public void save(VendorRegion vendorRegion) {
+		manager.persist(vendorRegion);
 
 	}
 
 	@Transactional
-	public List<VendorRigion> findAll() {
-		return manager.createQuery("FROM VendorRigion").getResultList();
+	public List<VendorRegion> findAll() {
+		return manager.createQuery("FROM VendorRegion").getResultList();
 	}
 
 	@Transactional
-	public VendorRigion findOne(int id) {
-		return manager.find(VendorRigion.class, id);
+	public VendorRegion findOne(int id) {
+		return manager.find(VendorRegion.class, id);
 	}
 
 	@Transactional

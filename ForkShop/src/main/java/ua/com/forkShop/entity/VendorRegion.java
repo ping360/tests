@@ -12,32 +12,32 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "vendor_rigion")
-public class VendorRigion {
+@Table(name = "vendor_region")
+public class VendorRegion {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@Column
 	private String name;
-	@ManyToMany(mappedBy = "vendorRigion")
+	@ManyToMany(mappedBy = "vendorRegion")
 	private List<Vendor> vendor = new ArrayList<>();
-	public VendorRigion(int id, String name, List<Vendor> vendor) {
+	public VendorRegion(int id, String name, List<Vendor> vendor) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.vendor = vendor;
 		
 	}
-	public VendorRigion(String name, List<Vendor> vendor) {
+	public VendorRegion(String name, List<Vendor> vendor) {
 		super();
 		this.name = name;
 		this.vendor = vendor;
 	}
-	public VendorRigion(String name) {
+	public VendorRegion(String name) {
 		super();
 		this.name = name;
 	}
-	public VendorRigion() {
+	public VendorRegion() {
 		super();
 	}
 	public int getId() {

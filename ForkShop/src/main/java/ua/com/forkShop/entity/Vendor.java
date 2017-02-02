@@ -23,29 +23,29 @@ private int id;
 	@Column
 private String name;
 	@ManyToMany
-	@JoinTable(name = "vendor_vendor_rigion", 
+	@JoinTable(name = "vendor_vendor_region", 
 	joinColumns=@JoinColumn (name = "id_vendor"),
-	inverseJoinColumns=@JoinColumn(name = "id_vendor_rigion"))
-	private List<VendorRigion> vendorRigion = new ArrayList<>();
+	inverseJoinColumns=@JoinColumn(name = "id_vendor_region"))
+	private List<VendorRegion> vendorRegion = new ArrayList<>();
 	@OneToMany(mappedBy = "vendor")
 	private List <Model> model = new ArrayList<>();
 	@OneToMany(mappedBy="vendor")
 	private List <Category> category = new ArrayList<>();
-	public Vendor(int id, String name, List<VendorRigion> vendorRigion,
+	public Vendor(int id, String name, List<VendorRegion> vendorRegion,
 			List<Model> model, List<Category> category) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.vendorRigion = vendorRigion;
+		this.vendorRegion = vendorRegion;
 		this.model = model;
 		this.category = category;
 		
 	}
-	public Vendor(String name, List<VendorRigion> vendorRigion,
+	public Vendor(String name, List<VendorRegion> vendorRegion,
 			List<Model> model, List<Category> category) {
 		super();
 		this.name = name;
-		this.vendorRigion = vendorRigion;
+		this.vendorRegion = vendorRegion;
 		this.model = model;
 		this.category = category;
 	}
@@ -68,11 +68,11 @@ private String name;
 	public void setName(String name) {
 		this.name = name;
 	}
-	public List<VendorRigion> getVendorRigion() {
-		return vendorRigion;
+	public List<VendorRegion> getVendorRigion() {
+		return vendorRegion;
 	}
-	public void setVendorRigion(List<VendorRigion> vendorRigion) {
-		this.vendorRigion = vendorRigion;
+	public void setVendorRigion(List<VendorRegion> vendorRigion) {
+		this.vendorRegion = vendorRigion;
 	}
 	public List<Model> getModel() {
 		return model;
