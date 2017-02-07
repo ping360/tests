@@ -2,12 +2,12 @@ package ua.com.forkShop.service;
 
 import java.util.List;
 
-import ua.com.forkShop.entity.Ñharacteristics;
+import ua.com.forkShop.entity.Characteristics;
 
 public interface CharacteristicsService {
-	void save (Ñharacteristics characteristics);
-	List<Ñharacteristics> findAll();
-	Ñharacteristics findOne(int id);
+	void save (Characteristics characteristics);
+	List<Characteristics> findAll();
+	Characteristics findOne(int id);
 	void delete(int id);
 
 }

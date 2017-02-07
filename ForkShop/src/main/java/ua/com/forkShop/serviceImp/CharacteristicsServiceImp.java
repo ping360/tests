@@ -6,22 +6,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ua.com.forkShop.dao.CharacteristicsDao;
-import ua.com.forkShop.entity.Ñharacteristics;
+import ua.com.forkShop.entity.Characteristics;
 @Service
 public class CharacteristicsServiceImp implements CharacteristicsDao{
 	@Autowired
 	private CharacteristicsDao characteristicsDao;
 
-	public void save(Ñharacteristics characteristics) {
+	public void save(Characteristics characteristics) {
 		characteristicsDao.save(characteristics);
 		
 	}
 
-	public List<Ñharacteristics> findAll() {
+	public List<Characteristics> findAll() {
 		return characteristicsDao.findAll();
 	}
 
-	public Ñharacteristics findOne(int id) {
+	public Characteristics findOne(int id) {
 		return characteristicsDao.findOne(id);
 	}
 

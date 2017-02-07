@@ -9,11 +9,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import ua.com.forkShop.entity.Model;
-
 @Entity
 @Table(name = "characteristics")
-public class Ñharacteristics {
+public class Characteristics {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
@@ -23,23 +21,23 @@ public class Ñharacteristics {
 	@ManyToOne
 	@JoinColumn(name = "id_category")
 	private Model model;
-	public Ñharacteristics(int id, String itemch, Model model) {
+	public Characteristics(int id, String itemch, Model model) {
 		super();
 		this.id = id;
 		this.itemch = itemch;
 		this.model = model;
 		
 	}
-	public Ñharacteristics(String itemch, Model model) {
+	public Characteristics(String itemch, Model model) {
 		super();
 		this.itemch = itemch;
 		this.model = model;
 	}
-	public Ñharacteristics(String itemch) {
+	public Characteristics(String itemch) {
 		super();
 		this.itemch = itemch;
 	}
-	public Ñharacteristics() {
+	public Characteristics() {
 		super();
 	}
 	public int getId() {

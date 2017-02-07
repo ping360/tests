@@ -9,26 +9,26 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import ua.com.forkShop.dao.CharacteristicsDao;
-import ua.com.forkShop.entity.Ñharacteristics;
+import ua.com.forkShop.entity.Characteristics;
 @Repository
 public class CharacteristicsDaoImp implements CharacteristicsDao{
 	@PersistenceContext(unitName="primary")
 	private EntityManager manager;
 	
 	@Transactional
-	public void save(Ñharacteristics characteristics) {
+	public void save(Characteristics characteristics) {
 		manager.persist(characteristics);
 		
 	}
 
 	@Transactional
-	public List<Ñharacteristics> findAll() {
+	public List<Characteristics> findAll() {
 		return manager.createQuery("FROM Characteristics").getResultList();
 	}
 
 	@Transactional
-	public Ñharacteristics findOne(int id) {
-		return manager.find(Ñharacteristics.class, id);
+	public Characteristics findOne(int id) {
+		return manager.find(Characteristics.class, id);
 	}
 
 	@Transactional

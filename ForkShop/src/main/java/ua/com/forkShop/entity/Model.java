@@ -30,9 +30,9 @@ public class Model {
 	@JoinColumn(name = "id_category")
 	private Category category;
 	@OneToMany(mappedBy = "model")
-	private List<Ñharacteristics> characteristics = new ArrayList<>();
+	private List<Characteristics> characteristics = new ArrayList<>();
 	public Model(int id, String name, BigDecimal price, Vendor vendor,
-			Category category, List<Ñharacteristics> characteristics) {
+			Category category, List<Characteristics> characteristics) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -42,7 +42,7 @@ public class Model {
 		this.characteristics = characteristics;
 	}
 	public Model(String name, BigDecimal price, Vendor vendor,
-			Category category, List<Ñharacteristics> characteristics) {
+			Category category, List<Characteristics> characteristics) {
 		super();
 		this.name = name;
 		this.price = price;
@@ -87,10 +87,10 @@ public class Model {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
-	public List<Ñharacteristics> getCharacteristics() {
+	public List<Characteristics> getCharacteristics() {
 		return characteristics;
 	}
-	public void setCharacteristics(List<Ñharacteristics> characteristics) {
+	public void setCharacteristics(List<Characteristics> characteristics) {
 		this.characteristics = characteristics;
 	}
 	
