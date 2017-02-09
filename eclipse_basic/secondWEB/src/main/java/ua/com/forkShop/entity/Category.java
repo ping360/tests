@@ -9,67 +9,76 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "category")
 public class Category {
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
-	@Column
+	
+	@Column(name="_name")
 	private String name;
-	@ManyToOne
-	@JoinColumn(name = "id_vendor")
-	private Vendor vendor;
-	@OneToMany(mappedBy = "category")
-	private List<Model> model = new ArrayList<>();
-	public Category(int id, String name, Vendor vendor, List<Model> model) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.vendor = vendor;
-		this.model = model;
-		
-	}
-	public Category(String name, Vendor vendor, List<Model> model) {
-		super();
-		this.name = name;
-		this.vendor = vendor;
-		this.model = model;
-	}
-	public Category(String name) {
-		super();
-		this.name = name;
-	}
-	public Category() {
-		super();
-	}
+	
+	@OneToMany(mappedBy="category")
+	private List<Item> items = new ArrayList<>();
+	
+	@ManyToMany
+	@JoinTable(name="category_name_of_feature_digital",
+	joinColumns=@JoinColumn(name="id_category"),
+	inverseJoinColumns=@JoinColumn(name="id_name_of_feature_digital"))
+	private List<NameOfFeatureDigital> nameOfFeatureDigitals = new ArrayList<>();
+
+	@ManyToMany
+	@JoinTable(name="category_name_of_feature_string",
+	joinColumns=@JoinColumn(name="id_category"),
+	inverseJoinColumns=@JoinColumn(name="id_name_of_feature_string"))
+	private List<NameOfFeatureString> nameOfFeatureStrings = new ArrayList<>();
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Vendor getVendor() {
-		return vendor;
+
+	public List<Item> getItems() {
+		return items;
 	}
-	public void setVendor(Vendor vendor) {
-		this.vendor = vendor;
+
+	public void setItems(List<Item> items) {
+		this.items = items;
 	}
-	public List<Model> getModel() {
-		return model;
+
+	public List<NameOfFeatureDigital> getNameOfFeatureDigitals() {
+		return nameOfFeatureDigitals;
 	}
-	public void setModel(List<Model> model) {
-		this.model = model;
+
+	public void setNameOfFeatureDigitals(List<NameOfFeatureDigital> nameOfFeatureDigitals) {
+		this.nameOfFeatureDigitals = nameOfFeatureDigitals;
 	}
+
+	public List<NameOfFeatureString> getNameOfFeatureStrings() {
+		return nameOfFeatureStrings;
+	}
+
+	public void setNameOfFeatureStrings(List<NameOfFeatureString> nameOfFeatureStrings) {
+		this.nameOfFeatureStrings = nameOfFeatureStrings;
+	}
+	
 	
 }

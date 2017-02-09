@@ -7,7 +7,7 @@ import org.springframework.data.repository.query.Param;
 import ua.com.forkShop.entity.Category;
 import ua.com.forkShop.entity.Characteristics;
 
-public interface ÑharacteristicsDao extends JpaRepository<Characteristics, Integer> {
+public interface Ð¡haracteristicsDao extends JpaRepository<Characteristics, Integer> {
 
 	Category findByName(String name);
 	
