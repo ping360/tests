@@ -40,13 +40,13 @@ public class Item {
 	@JoinTable(name="digital_unit_item",
 	joinColumns=@JoinColumn(name="id_item"),
 	inverseJoinColumns=@JoinColumn(name="id_digital_unit"))
-	private List<DigitalUnit> digitalUnit = new ArrayList<>();
+	private List<DigitalUnit> digitalUnits = new ArrayList<>();
 	
 	@ManyToMany
 	@JoinTable(name="item_feature_string",
 			joinColumns=@JoinColumn(name="id_item"),
 			inverseJoinColumns=@JoinColumn(name="id_feature_string"))
-	private List<FeatureString> featureString = new ArrayList<>();
+	private List<FeatureString> featureStrings = new ArrayList<>();
 	
 	@ManyToMany
 	@JoinTable(name="item_feature_digital",
@@ -94,20 +94,20 @@ public class Item {
 		this.category = category;
 	}
 
-	public List<DigitalUnit> getDigitalUnit() {
-		return digitalUnit;
+	public List<DigitalUnit> getDigitalUnits() {
+		return digitalUnits;
 	}
 
-	public void setDigitalUnit(List<DigitalUnit> digitalUnit) {
-		this.digitalUnit = digitalUnit;
+	public void setDigitalUnits(List<DigitalUnit> digitalUnits) {
+		this.digitalUnits = digitalUnits;
 	}
 
-	public List<FeatureString> getFeatureString() {
-		return featureString;
+	public List<FeatureString> getFeatureStrings() {
+		return featureStrings;
 	}
 
-	public void setFeatureString(List<FeatureString> featureString) {
-		this.featureString = featureString;
+	public void setFeatureStrings(List<FeatureString> featureStrings) {
+		this.featureStrings = featureStrings;
 	}
 
 	public List<FeatureDigital> getFeatureDigitals() {

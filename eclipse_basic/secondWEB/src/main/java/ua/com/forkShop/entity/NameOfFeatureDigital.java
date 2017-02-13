@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "name_of_feature_string")
+@Table(name = "name_of_feature_digital")
 public class NameOfFeatureDigital {
 
 	@Id
@@ -26,7 +26,7 @@ public class NameOfFeatureDigital {
 	@OneToMany(mappedBy="nameOfFeatureDigital")
 	private List<FeatureDigital> featureDigitals = new ArrayList<>();
 	
-	@ManyToMany(mappedBy="nameOfFeatureString")
+	@ManyToMany(mappedBy="nameOfFeatureDigitals")
 	private List<Category> categories = new ArrayList<>();
 
 	public int getId() {

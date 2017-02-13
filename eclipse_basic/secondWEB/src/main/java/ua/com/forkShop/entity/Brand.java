@@ -22,7 +22,7 @@ public class Brand {
 	@Column(name="_name")
 	private String name;
 	
-	@OneToMany(mappedBy="producer")
+	@OneToMany(mappedBy="brand")
 	private List<Item> items = new ArrayList<>();
 
 	public int getId() {

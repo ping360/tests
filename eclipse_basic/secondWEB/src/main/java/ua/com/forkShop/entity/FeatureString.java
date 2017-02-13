@@ -27,9 +27,9 @@ public class FeatureString {
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="id_name_of_feature_string")
-	private NameOfFeatureDigital nameOfFeatureDigital;
+	private NameOfFeatureString nameOfFeatureString;
 	
-	@ManyToMany(mappedBy="featuresDigitals")
+	@ManyToMany(mappedBy="featureStrings")
 	private List<Item> items = new ArrayList<>();
 
 	public int getId() {
@@ -48,12 +48,12 @@ public class FeatureString {
 		this.name = name;
 	}
 
-	public NameOfFeatureDigital getNameOfFeatureDigital() {
-		return nameOfFeatureDigital;
+	public NameOfFeatureString getNameOfFeatureString() {
+		return nameOfFeatureString;
 	}
 
-	public void setNameOfFeatureDigital(NameOfFeatureDigital nameOfFeatureDigital) {
-		this.nameOfFeatureDigital = nameOfFeatureDigital;
+	public void setNameOfFeatureString(NameOfFeatureString nameOfFeatureString) {
+		this.nameOfFeatureString = nameOfFeatureString;
 	}
 
 	public List<Item> getItems() {
