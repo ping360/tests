@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <p id="timer"></p>
+   <button type="button" id="start">start</button>
+   <button type="button" id="stop">stop</button>
+    <script>
+        var a = 1;
+        var b ='2';
+//syso        
+        console.log(a+(+b));
+        
+        var trigger = 'false';
+        if(trigger==='true'){
+            console.log("True")
+        }else{
+            console.log("False")
+        }
+//цикл        
+        for(var i=0; i < 3; i++){
+            console.log(i);
+        }
+        console.log(i);
+// масив        
+        var array = [33,"pol"];
+        array.length = 10;
+        array.push(1);
+        array.push("Hello");
+        array.push({});
+        console.log(array);
+//Об`єкти        
+       var obj = {
+           name:'Ivan',
+           age:18
+       };
+        console.log(obj);
+        obj.isMale = true;
+        console.log(obj);
+//Функції
+        function func(qwer){
+            console.log(qwer);
+        }
+        func('Hello');
+        var asdf = func;
+        asdf("Hello git! I am func!")
+//Доступ до невідомих полів
+        console.log(obj['name']);
+//Замикання
+        function sum(a){
+            return function(b){
+                return a+b;
+            }
+        }
+        var abc = sum(5);
+        console.log(abc(2));
+        console.log(abc(5));
+        console.log(abc(10));
+//Стрічковий буфер
+        function stringBuffer(){
+            var data = "";
+            function text(text){
+                if(text){
+                    data+=text;
+                }else{
+                    return data;
+                }
+            }
+            text.clear = function(){
+                data = "";
+            }
+            return text;
+        }
+        
+        var buffer = stringBuffer();
+        buffer('HeLLo');
+        buffer(" javaScript");
+        console.log(buffer());
+        buffer.clear();
+        console.log(buffer());
+//Приховати змінну        
+        ;(function(){
+            var c = 'c';
+            console.log(c);
+        })();
+//        console.log(c);
+//Асинхронність жава скріпта        
+        var start = new Date();
+        setTimeout(function(){
+            console.log(new Date() - start);
+        }, 500);
+        console.log("after");
+//        while(new Date() - start<10000);
+//Модуль        
+        var timer = function(){
+            var field = document.getElementById('timer');
+            var time = 0;
+            var trigger = false;
+            setTime();
+            
+            function setTime(){
+                field.innerHTML = time;
+            }
+            
+            setInterval(function(){
+                if(trigger){
+                    time++;
+                    setTime();
+                }
+            }, 100);
+            
+            return{
+                start:function(){
+                    if(!trigger){
+                        trigger = !trigger;
+                    }
+                },
+                stop:function(){
+                    if(trigger){
+                        trigger = !trigger;
+                    }else{
+                        time=0;
+                        setTime();
+                    }
+                }
+            };
+            
+        }();
+        document.getElementById('start').addEventListener('click', function(){
+            timer.start();
+        });
+        document.getElementById('stop').addEventListener('click', function(){
+            timer.stop();
+        });
+    </script>
+</body>
+</html>
