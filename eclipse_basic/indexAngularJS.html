@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html ng-app="app" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script>
+        var app = angular.module('app',[]);
+        app.filter('byName', function(){
+           return function(items, search){
+               if(!search) return items;
+               var array = [];
+               for(var i=0; i<items.length; i++){
+                   if(items[i].name.toUpperCase().indexOf(search.toUpperCase())
+                     !==-1){
+                       array.push(items[i]);
+                   }
+               }
+               return array;
+           } 
+        });
+        app.controller('mainCtrl', function($scope){
+            $scope.currentView = 'data';
+            $scope.people = [
+              {id:1, name:'Andrew', age:28, address:'Lviv'},
+              {id:2, name:'Mish', age:25, address:'Lviv'}
+            ];
+            $scope.currentItem = {};
+            $scope.search = '';
+            
+            $scope.add = function(){
+                $scope.currentView = 'form';
+            }
+            
+            $scope.cansel = function(){
+                $scope.currentItem = {};
+                $scope.currentView = 'data';
+            }
+            
+            $scope.save = function(){
+                if(!$scope.currentItem.id){
+                    $scope.currentItem.id = $scope.people.length + 1;
+                    $scope.people.push($scope.currentItem);
+                }
+                $scope.cansel();
+            }
+            
+            $scope.update = function(item){
+                $scope.currentItem = item;
+                $scope.add();
+            }
+            
+            $scope.delete = function(item){
+                $scope.people.splice(item.id-1, 1);
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="container-fluid" ng-controller="mainCtrl">
+<!--Перевірка чи вірно підкличився скрипт      -->
+<!--       {{2+2}}-->
+        <div class="row" ng-show="currentView == 'data'">
+            <div class="col-sm-3">
+                <form class="form-horizontal">
+                    <input class="form-control" mg-model="search">
+                </form>
+            </div>
+            <div class="col-sm-9">
+                <div class="row">
+                    <h2 class="col-sm-3">Name</h2>
+                    <h2 class="col-sm-3">Age</h2>
+                    <h2 class="col-sm-3">Address</h2>
+                    <h2 class="col-sm-3">Options</h2>
+                </div>
+                <div class="row" ng-repeat="item in people | byName : search">
+                    <div class="col-sm-3">{{item.name}}</div>
+                    <div class="col-sm-3">{{item.age}}</div>
+                    <div class="col-sm-3">{{item.address}}</div>
+                    <div class="col-sm-3">
+                        <button class="btn btn-warning" ng-click="update(item)">Update</button>
+                        <button class="btn btn-danger" ng-click="delete(item)">Delete</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button type="button" class="btn btn-success" ng-click="add()">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" ng-show="currentView == 'form'">
+            <div class="col-sm-6 col-sm-offset-3">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Name</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" ng-model="currentItem.name">
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <label class="control-label col-sm-2">Age</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" ng-model="currentItem.age">
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <label class="control-label col-sm-2">Address</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" ng-model="currentItem.address">
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <div class="col-sm-10 col-sm-offset-2">
+                            <button type="button" class="btn btn-success" ng-click="save()">Create</button>
+                            <button type="button" class="btn btn-warning" ng-click="cansel()">Cansel</button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
